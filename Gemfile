@@ -21,6 +21,10 @@ gem "sprockets-es6"
 gem "suspenders"
 gem "title"
 gem "uglifier"
+gem "clearance", :git => "https://github.com/thoughtbot/clearance"
+gem "turbolinks"
+
+
 
 group :development do
   gem "listen"
