@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  root to: "restaurants#index"
+
+  resources :restaurants, only: [:new, :index]
+
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
 
