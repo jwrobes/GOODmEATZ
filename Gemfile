@@ -21,16 +21,15 @@ gem "sprockets-es6"
 gem "suspenders"
 gem "title"
 gem "uglifier"
-gem "clearance", :git => "https://github.com/thoughtbot/clearance"
+gem "clearance", git: "https://github.com/thoughtbot/clearance"
 gem "turbolinks"
-
-
 
 group :development do
   gem "listen"
   gem "spring"
   gem "spring-commands-rspec"
   gem "web-console"
+  gem "rubocop",  "0.39.0"
 end
 
 group :development, :test do
@@ -65,7 +64,7 @@ group :staging, :production do
   gem "rails_stdout_logging"
 end
 
-gem 'high_voltage'
-gem 'bourbon', '5.0.0.beta.6'
-gem 'neat', '~> 1.8.0'
-gem 'refills', group: [:development, :test]
+gem "high_voltage"
+gem "bourbon", "5.0.0.beta.6"
+gem "neat", "~> 1.8.0"
+gem "refills", group: [:development, :test]
