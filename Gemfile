@@ -24,6 +24,9 @@ gem "uglifier"
 gem "clearance", git: "https://github.com/thoughtbot/clearance"
 gem "turbolinks"
 
+# Api for restaurants
+gem "yelp"
+
 group :development do
   gem "listen"
   gem "spring"
