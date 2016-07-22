@@ -10,6 +10,7 @@ AllCops:
     - "bin/delayed_job/"
     - "bin/spring/"
     - "config/smtp.rb"
+    - "spec/support/yelp_api_helper.rb"
   UseCache: false
 Rails:
   Enabled: true

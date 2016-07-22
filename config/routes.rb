@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: "restaurants#index"
 
+  resource :new_restaurant_searches, only: [:show, :create]
   resources :restaurants, only: [:new, :index]
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
