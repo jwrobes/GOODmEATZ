@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160713034904) do
+ActiveRecord::Schema.define(version: 20160723001249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,8 +30,39 @@ ActiveRecord::Schema.define(version: 20160713034904) do
     t.index ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
   end
 
+  create_table "meats", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "restaurant_meats", force: :cascade do |t|
+    t.integer  "restaurant_id"
+    t.integer  "meat_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["meat_id"], name: "index_restaurant_meats_on_meat_id", using: :btree
+    t.index ["restaurant_id"], name: "index_restaurant_meats_on_restaurant_id", using: :btree
+  end
+
+  create_table "restaurant_sources", force: :cascade do |t|
+    t.integer  "restaurant_id"
+    t.integer  "source_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["restaurant_id"], name: "index_restaurant_sources_on_restaurant_id", using: :btree
+    t.index ["source_id"], name: "index_restaurant_sources_on_source_id", using: :btree
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
+    t.string "api_id", default: "f", null: false
+  end
+
+  create_table "sources", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
