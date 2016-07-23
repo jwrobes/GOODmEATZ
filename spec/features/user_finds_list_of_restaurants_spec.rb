@@ -6,6 +6,6 @@ feature "user finds list of restaurants" do
 
     visit root_path
 
-    expect(page).to have_css ".restaurants li", text: "Park burger"
+    expect(page).to have_css "p", text: "Park burger"
   end
 end
