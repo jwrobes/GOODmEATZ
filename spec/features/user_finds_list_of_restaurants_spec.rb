@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "user finds list of restaurants" do
   scenario "successfully" do
-    Restaurant.create!(name: "Park burger")
+    create(:restaurant)
 
     visit root_path
 
